@@ -13,13 +13,11 @@ function bubbleSort(arr) {
 // The value on the left is being compared to the value on the right. Therefore, we do not need to traverse to the end of the array, so set it to -1.
     let end = arr.length - 1;
     // now we loop thru the array
-    for (let i = 0; i < end; i++){
+    for (let i = 0, j = 1; i < end; i++, j++){
         // condition
-        if (arr[i] > arr[i +1]){
+        if (arr[i] > arr[j]){
             swapped = true;
-            let nextNode = arr[i];
-            arr[i] = arr[i + 1];
-            arr[i + 1] = nextNode;
+            [arr[i], arr[j]] = [arr[j], arr[i]];
         }
     }
     // refer to line 13
